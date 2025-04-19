@@ -20,21 +20,6 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=dia-na-oct&show_icons=true&locale=en" alt="dia-na-oct" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dia-na-oct&" alt="dia-na-oct" /></p>
-# 💧 Schéma du Cycle de l'Eau
 
-Ce projet illustre le **cycle de l'eau** sous forme de schéma interactif / image / visualisation. Il peut être utilisé à des fins pédagogiques pour expliquer les différentes étapes du cycle naturel de l'eau.
-
-## 🌦️ Aperçu
-
-Le cycle de l'eau est un processus continu qui comprend les étapes suivantes :
-
-1. **Evaporation ☀️** : L'eau des océans, rivières et lacs s'évapore sous l'effet de la chaleur du soleil.
-2. **Condensation ☁️** : La vapeur d'eau se refroidit et forme des nuages.
-3. **Précipitations 🌧️** : Lorsque les gouttelettes se rassemblent, elles tombent sous forme de pluie, neige ou grêle.
-4. **Ruissellement et infiltration 💧** : L'eau retourne vers les océans via les rivières ou s'infiltre dans le sol, reconstituant les nappes phréatiques.
-
----
-
-## 📁 Structure des fichiers
 
 
