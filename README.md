@@ -21,5 +21,56 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dia-na-oct&" alt="dia-na-oct" /></p>
 
+```mermaid
+flowchart TD
+  subgraph Présentation
+    A1[Dashboard Temps Réel]
+    A2[Alertes Utilisateur]
+    A3[Vue Mobile sécurisée]
+  end
+
+  subgraph Sécurité
+    B1[MFA & RBAC]
+    B2[Journalisation]
+    B3[Chiffrement TLS/AES]
+  end
+
+  subgraph Logique_Métier
+    C1[Surveillance Paramètres]
+    C2[Analyse Qualité]
+    C3[Actions Automatisées]
+    C4[Traçabilité]
+  end
+
+  subgraph Données
+    D1[DB Qualité]
+    D2[DB Historique]
+  end
+
+  subgraph Communication
+    E1[MQTT Listener]
+    E2[OPC-UA/Modbus Adapter]
+    E3[Normalisation JSON]
+  end
+
+  subgraph Infrastructure
+    F1[Serveur Applicatif]
+    F2[Backup & Cloud]
+    F3[Réseau Sécurisé]
+  end
+
+  %% Liens
+  A1 --> C1
+  A2 --> C2
+  C1 --> D1
+  C2 --> D2
+  E1 --> C1
+  E2 --> C1
+  B1 --> A1
+  B2 --> C3
+  C3 --> D1
+  F1 --> D1
+  F2 --> D2
+  F3 --> E1
 
 
