@@ -21,49 +21,5 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dia-na-oct&" alt="dia-na-oct" /></p>
 
-@startuml Master-Slave Architecture
-
-' Define components
-component "Master Node" as master {
-    component "Process Coordinator"
-    component "Data Processor"
-    component "Command Dispatcher"
-}
-
-component "Slave Node 1" as slave1 {
-    component "Task Executor"
-    component "Status Reporter"
-}
-
-component "Slave Node 2" as slave2 {
-    component "Task Executor"
-    component "Status Reporter"
-}
-
-component "PLCs" as plcs {
-    component "Control Task Executor"
-    component "Status Reporter"
-}
-
-component "SCADA Servers" as scada {
-    component "Data Processor"
-    component "Command Dispatcher"
-}
-
-component "IoT Sensors" as iot {
-    component "Data Collector"
-}
-
-' Define interactions
-master --> slave1 : "Control Commands"
-master --> slave2 : "Control Commands"
-slave1 --> master : "Status Reports"
-slave2 --> master : "Status Reports"
-plcs --> scada : "Status Reports"
-scada --> plcs : "Control Commands"
-iot --> scada : "Real-time Data"
-
-@enduml
-
 
 
