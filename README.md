@@ -21,56 +21,49 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dia-na-oct&" alt="dia-na-oct" /></p>
 
-```mermaid
-flowchart TD
-  subgraph Présentation
-    A1[Dashboard Temps Réel]
-    A2[Alertes Utilisateur]
-    A3[Vue Mobile sécurisée]
-  end
+@startuml Master-Slave Architecture
 
-  subgraph Sécurité
-    B1[MFA & RBAC]
-    B2[Journalisation]
-    B3[Chiffrement TLS/AES]
-  end
+' Define components
+component "Master Node" as master {
+    component "Process Coordinator"
+    component "Data Processor"
+    component "Command Dispatcher"
+}
 
-  subgraph Logique_Métier
-    C1[Surveillance Paramètres]
-    C2[Analyse Qualité]
-    C3[Actions Automatisées]
-    C4[Traçabilité]
-  end
+component "Slave Node 1" as slave1 {
+    component "Task Executor"
+    component "Status Reporter"
+}
 
-  subgraph Données
-    D1[DB Qualité]
-    D2[DB Historique]
-  end
+component "Slave Node 2" as slave2 {
+    component "Task Executor"
+    component "Status Reporter"
+}
 
-  subgraph Communication
-    E1[MQTT Listener]
-    E2[OPC-UA/Modbus Adapter]
-    E3[Normalisation JSON]
-  end
+component "PLCs" as plcs {
+    component "Control Task Executor"
+    component "Status Reporter"
+}
 
-  subgraph Infrastructure
-    F1[Serveur Applicatif]
-    F2[Backup & Cloud]
-    F3[Réseau Sécurisé]
-  end
+component "SCADA Servers" as scada {
+    component "Data Processor"
+    component "Command Dispatcher"
+}
 
-  %% Liens
-  A1 --> C1
-  A2 --> C2
-  C1 --> D1
-  C2 --> D2
-  E1 --> C1
-  E2 --> C1
-  B1 --> A1
-  B2 --> C3
-  C3 --> D1
-  F1 --> D1
-  F2 --> D2
-  F3 --> E1
+component "IoT Sensors" as iot {
+    component "Data Collector"
+}
+
+' Define interactions
+master --> slave1 : "Control Commands"
+master --> slave2 : "Control Commands"
+slave1 --> master : "Status Reports"
+slave2 --> master : "Status Reports"
+plcs --> scada : "Status Reports"
+scada --> plcs : "Control Commands"
+iot --> scada : "Real-time Data"
+
+@enduml
+
 
 
